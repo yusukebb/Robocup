@@ -1,0 +1,29 @@
+<launch>
+  
+  <arg name="x_pos" default="1.0"/>
+  <arg name="y_pos" default="-1.07"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <!-- We resume the logic in gazebo_ros packageempty_world.launch,
+  changing only the name of the world to be launched -->
+  <include file="$(find Robocup_final)/launch/fbj_empty_world_copy.launch">
+    <arg name="world_name" value="$(find Robocup_final)/worlds/fbj_RoboCup.world"/>
+    <!--<arg name="world_name" value="$(find Robocup_final)/worlds/turtlebot3_world.world"/>-->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/> 
+  </include>
+
+
+  <param name="robot_description" textfile="$(find mark_fbj1)/urdf/mark_fbj1.urdf" />
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-param robot_description -urdf -model mark_fbj -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)" />
+  
+  <rosparam command="load" file="$(find Robocup_final)/config/diff_drive_controller.yaml" ns="/mark_fbj" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/mark_fbj" args="diff_drive_controller" />
+
+
+
+</launch>

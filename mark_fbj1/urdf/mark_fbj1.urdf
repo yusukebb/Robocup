@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mark_fbj1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.033289 -0.125 0.022731"
+        rpy="0 0 0" />
+      <mass
+        value="3" />
+      <inertia
+        ixx="0.0013939"
+        ixy="-8.9385E-13"
+        ixz="7.9629E-06"
+        iyy="0.0010651"
+        iyz="-9.055E-12"
+        izz="0.0020002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/base_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/base_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 1.7347E-18 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="4.3543E-05"
+        ixy="-2.6386E-37"
+        ixz="-4.4116E-24"
+        iyy="4.3543E-05"
+        iyz="-4.6061E-38"
+        izz="8.0422E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.023709 -0.055 0.01262"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-3.4694E-18 1.7347E-18 0.01"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="4.3543E-05"
+        ixy="-2.6386E-37"
+        ixz="5.6028E-22"
+        iyy="4.3543E-05"
+        iyz="-9.0544E-38"
+        izz="8.0422E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.023709 -0.195 0.01262"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0.0275 0.0074972 -0.00020497"
+        rpy="0 0 0" />
+      <mass
+        value="0.011651" />
+      <inertia
+        ixx="4.2448E-07"
+        ixy="-5.6178E-23"
+        ixz="4.4281E-22"
+        iyy="2.8411E-06"
+        iyz="3.3945E-10"
+        izz="2.8535E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_link_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.088567 -0.095601 0.023507"
+      rpy="-3.1279 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="sensor_link">
+    <inertial>
+      <origin
+        xyz="0.0047846 -0.043843 0.017736"
+        rpy="0 0 0" />
+      <mass
+        value="0.077493" />
+      <inertia
+        ixx="4.1051E-05"
+        ixy="2.9646E-21"
+        ixz="4.3944E-21"
+        iyy="4.1051E-05"
+        iyz="1.7231E-19"
+        izz="6.5429E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_fbj1/meshes/sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sensor_link_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.033162 -0.078327 0.052753"
+      rpy="-0.0014827 0.013586 -0.10871" />
+    <parent
+      link="base_link" />
+    <child
+      link="sensor_link" />
+    <axis
+      xyz="0.10849 -0.9941 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+
+
+
+
+
+
+  <!--レーザセンサを定義する-->
+  <gazebo reference="sensor_link">
+    <sensor type="ray" name="hokuyo">
+    <!--sensor type="gpu_ray" name="hokuyo"-->
+      <pose>0 0 0 0 0 0 </pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+
+        </ray>
+      <!--レーザセンサのためのプラグインを指定-->
+      <plugin name="laser" filename="libgazebo_ros_laser.so">
+      <!--plugin name="gpu_laser" filename="libgazebo_ros_gpu_laser.so"-->
+        <topicName>/scan</topicName>
+        <frameName>sensor_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+
+
+  
+
+  
+
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <pose>0 0 0 3.14 0 1.5707</pose>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1920</width>
+          <height>1080</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.0</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/camera_robot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/mark_fbj</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+
+  <transmission name="transmission1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="left_tip" />
+  <gazebo reference="right_tip" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</robot>
